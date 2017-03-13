@@ -1,11 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Inconsolata:400,700);
+$font-nav: 'Inconsolata';
+$font-body: 'Inconsolata', sans-serif;
+$font-title: 'Poppins', sans-serif;
+$font-main: 'Inconsolata', sans-serif;
+$accent-cool: #73c6a8;
+$accent-warm: #ff6b61;
+$black: #333333;
+$white: #ffffff;
+$dark: #7994a6;
+$light-warm: #f4f4f4;
+$light-cool: #eaedf0;
+
 .App {
-  text-align: center;
+    text-align: center;
+}
+/*  link styles */
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: $dark;
 }
 
-nav ul {
-  list-style-type: none;
+a {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.2em;
+    background: $accent-warm;
+    transition: width .3s;
+    margin-top: 2px;
+  }
+  &:hover {
+    &:after {
+      width: 80%;
+    }
+  }
+}
 
-  li {
-    display: inline-block;
+/*  layout  */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#myCanvas {
+  height: 180vh;
+  position: absolute;
+  z-index: -1;
+}
+
+/*  nav styles  */
+nav {
+  float: none;
+  width: 100%;
+  background-color: $accent-warm;
+  padding: 2em;
+  box-shadow: 0px 2px 2px $dark;
+
+  a {
+    color: $white;
+    &:after {
+      background-color: $accent-cool;
+      width: 0;
+    }
+  }
+  a:hover {
+    color: $white;
+    &:after {
+      width: 80%;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      float: right;
+      font: 100% $font-nav;
+      padding-right: 3em;
+    }
+
+    #home {
+      float: left;
+    }
+
   }
 }
