@@ -5,7 +5,7 @@ class Header extends Component {
     render() {
         var pages = ['home', 'contact', 'about', 'work'];
         var navLinks = pages.map(function(page) {
-            if (page == 'home') {
+            if (page === 'home') {
                 var listLink = <a href='/'>tracey lum</a>;
             } else {
                 var listLink = <a href={'/' + page}>{page}</a>;
