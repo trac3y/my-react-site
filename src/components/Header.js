@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import './../styles/App.css';
 
 class Header extends Component {
@@ -36,9 +37,9 @@ class Header extends Component {
     var pages = ['home', 'contact', 'about', 'work'];
     var navLinks = pages.map(function(page) {
       if (page === 'home') {
-        var listLink = <a href='/'>tracey lum</a>;
+        var listLink = <Link to='/'>tracey lum</Link>;
         } else {
-          var listLink = <a href={'/' + page}>{page}</a>;
+          var listLink = <Link to={'/' + page}>{page}</Link>;
           }
           return (
             <li key={page} id={page}>{listLink}</li>
